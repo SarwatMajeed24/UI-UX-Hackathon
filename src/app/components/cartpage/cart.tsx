@@ -6,7 +6,7 @@ interface data {
     p: string;
     date?:string
 }
-export default function Cart(props:data){
+export default function Card(props:data){
     return(
     <div>
     <div className="w-[610px] h-[242px] rounded-[20px] border-[1px] border-[#0000001A] ">

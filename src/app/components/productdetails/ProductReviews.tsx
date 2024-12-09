@@ -50,9 +50,8 @@ export default function Customer() {
       <div className="w-[90%] h-[80px] flex justify-start   items-center m-auto">
         <div className="flex w-2/3 h-[20px] justify-start gap-2 items-center mx-auto">
         <h1 className="flex gap-4 sm:h-[58px] sm:w-[654px]  w-[286px] h-[20px] left-4 text-[#000000] lg:left-[100px] top-[150px] text-[20px] sm:text-[28px] sm:mt-[50px] leading-[57.px] font-semibold mb-2 mx-auto">
-          All Reviews 
-          <h2 className=" text-lg items-baseline text-gray-500">(415)</h2>
-        </h1>
+          All Reviews </h1>
+                  
         
         </div>
         <div className="flex w-1/3 justify-end items-center gap-2 my-auto">
@@ -83,3 +82,5 @@ export default function Customer() {
     </div>
   );
 }
+
+

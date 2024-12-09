@@ -15,6 +15,7 @@ type CasualCardData = {
 
 const CasualCard = () => {
   const card: CasualCardData[] = [
+    
     {
       id: 1,
       image: "/images/product detail page/Cate1.png",
@@ -106,16 +107,13 @@ const CasualCard = () => {
     <div>
       {/* Heading */}
       <div className="text-center mt-12 mb-6">
-        <h1
-          className="font-IntegralCF text-4xl font-extrabold leading-[57.6px] text-start"
-          style={{ textUnderlinePosition: "from-font" }}
-        >
+        <h1 className="font-IntegralCF text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[57.6px]">
           Casual
         </h1>
       </div>
 
       {/* Card Section */}
-      <div className="w-[90%] border-b-2 border-gray-200 grid grid-cols-3 gap-6 m-auto">
+      <div className="w-[90%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 m-auto">
         {card.map((item) => (
           <div
             key={item.id}
@@ -147,9 +145,7 @@ const CasualCard = () => {
               <span className="text-sm">{item.rating}/5</span>
             </div>
             <div className="mt-1 flex items-center gap-2">
-              <span className="text-lg font-bold text-gray-800">
-                {item.price}
-              </span>
+              <span className="text-lg font-bold text-gray-800">{item.price}</span>
               {item.priceWas && (
                 <>
                   <span className="text-sm line-through text-gray-500">
@@ -166,12 +162,12 @@ const CasualCard = () => {
       </div>
 
       {/* View All Button */}
-      <div className="col-span-full flex justify-between items-center px-12 mt-8 mb-12">
-        <button className="flex gap-4 justify-between items-center text-lg font-Satoshi font-medium text-black px-16 py-2 border-2 border-gray-200 rounded-xl">
-        <FaArrowLeftLong/>Previous
+      <div className="flex justify-between items-center mt-8 mb-12 px-12">
+        <button className="flex gap-4 justify-between items-center text-lg font-Satoshi font-medium text-black px-6 py-2 border-2 border-gray-200 rounded-xl">
+          <FaArrowLeftLong /> Previous
         </button>
-        <button className="flex gap-4 justify-between items-center text-lg font-Satoshi font-medium text-black px-16 py-2 border-2 border-gray-200 rounded-xl">
-          Next<FaArrowRightLong/>
+        <button className="flex gap-4 justify-between items-center text-lg font-Satoshi font-medium text-black px-6 py-2 border-2 border-gray-200 rounded-xl">
+          Next <FaArrowRightLong />
         </button>
       </div>
     </div>

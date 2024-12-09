@@ -13,7 +13,6 @@ type TopSellerData = {
 
 const YouMayLike = () => {
   const card: TopSellerData[] = [
-   
     {
       id: 1,
       image: "/images/product detail page/cate10.png",
@@ -31,13 +30,13 @@ const YouMayLike = () => {
       rating: 3.5,
     },
     {
-        id: 3,
-        image: "/images/product detail page/cate2.png",
-        title: "Polo with Tipping Details",
-        price: "$180",
-        priceWas: "",
-        rating: 4.5,
-      },
+      id: 3,
+      image: "/images/product detail page/cate2.png",
+      title: "Polo with Tipping Details",
+      price: "$180",
+      priceWas: "",
+      rating: 4.5,
+    },
     {
       id: 4,
       image: "/images/product detail page/cate3.png",
@@ -48,7 +47,6 @@ const YouMayLike = () => {
     },
   ];
 
-  // Function to calculate the discount percentage
   const calculateDiscount = (price: string, priceWas: string) => {
     if (priceWas) {
       const discount =
@@ -62,25 +60,23 @@ const YouMayLike = () => {
   };
 
   return (
-    <div>
-      {/* NEW ARRIVALS Heading */}
-      <div className="text-center mt-12 mb-6">
-        <h1
-          className="font-IntegralCF text-4xl font-extrabold leading-[57.6px] text-center"
-          style={{ textUnderlinePosition: "from-font" }}
-        >
+    <div className="py-10 px-4">
+      {/* Heading */}
+      <div className="text-center mb-8">
+        <h1 className="font-IntegralCF text-4xl font-extrabold leading-tight underline underline-offset-4">
           YOU MIGHT ALSO LIKE
         </h1>
       </div>
 
       {/* Card Section */}
-      <div className="w-[90%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ml-60 gap-4 m-auto">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto">
         {card.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-lg p-2 hover:shadow-lg transition-shadow flex flex-col justify-between"
+            className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow flex flex-col justify-between"
           >
-            <div className="relative w-full h-[300px] rounded-[20px] overflow-hidden">
+            {/* Image Section */}
+            <div className="relative w-full h-[250px] rounded-md overflow-hidden">
               <Image
                 src={item.image}
                 alt={item.title}
@@ -89,9 +85,13 @@ const YouMayLike = () => {
                 className="rounded-md"
               />
             </div>
-            <h2 className="text-sm font-semibold mt-2">{item.title}</h2>
-            <div className="flex items-center gap-2 mt-1">
-              <div className="flex text-yellow-500">
+
+            {/* Title */}
+            <h2 className="text-lg font-semibold mt-4">{item.title}</h2>
+
+            {/* Rating */}
+            <div className="flex items-center gap-2 mt-2">
+              <div className="flex">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <IoMdStar
                     key={index}
@@ -103,26 +103,25 @@ const YouMayLike = () => {
                   />
                 ))}
               </div>
-              <span className="text-sm">{item.rating}/5</span>
+              <span className="text-sm text-gray-600">{item.rating}/5</span>
             </div>
-            <div className="mt-1 flex items-center gap-2">
-              <span className="text-lg font-bold text-gray-800">{item.price}</span>
+
+            {/* Price Section */}
+            <div className="mt-3 flex items-center gap-2">
+              <span className="text-xl font-bold text-gray-800">{item.price}</span>
               {item.priceWas && (
                 <>
                   <span className="text-sm line-through text-gray-500">
                     {item.priceWas}
                   </span>
-                  <button className="bg-pink-100 text-red-600 text-xs py-1 px-2 rounded-full">
+                  <span className="bg-red-100 text-red-600 text-xs py-1 px-2 rounded-full">
                     {calculateDiscount(item.price, item.priceWas)}% OFF
-                  </button>
+                  </span>
                 </>
               )}
             </div>
           </div>
         ))}
-
-        {/* Centered View All Button Inside Card Section */}
-        
       </div>
     </div>
   );

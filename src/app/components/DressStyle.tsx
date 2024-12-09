@@ -10,12 +10,13 @@ const DressStyle = () => {
                 </h1>
 
                 {/* Grid container for the images */}
+
                 <div className="grid grid-cols-4 gap-x-48 gap-y-8">
-        {/* First Image */}
+       {/* First Image */}
         <div className="col-span-1">
           <div className="w-[407px] h-[289px] relative ml-14">
             <Image
-              src="/images/Casual.png" // Replace with your image path
+              src="/images/Casual.png"
               alt="Casual Dress"
               layout="fill"
               objectFit="cover"
@@ -28,7 +29,7 @@ const DressStyle = () => {
         <div className="col-span-3">
           <div className="w-[684px] h-[289px] relative ml-40">
             <Image
-              src="/images/Formal.png" // Replace with your image path
+              src="/images/Formal.png" 
               alt="Formal Dress"
               layout="fill"
               objectFit="cover"
@@ -41,7 +42,7 @@ const DressStyle = () => {
         <div className="col-span-1">
           <div className="w-[684px] h-[289px] relative ml-14">
             <Image
-              src="/images/Party.png" // Replace with your image path
+              src="/images/Party.png" 
               alt="Party dress"
               layout="fill"
               objectFit="cover"
@@ -54,7 +55,7 @@ const DressStyle = () => {
         <div className="col-span-3  ">
           <div className="w-[407px] h-[289px] relative ml-[50%]">
             <Image
-              src="/images/Gym.png" // Replace with your image path
+              src="/images/Gym.png" 
               alt="Gym Dress"
               layout="fill"
               objectFit="cover"
@@ -69,5 +70,4 @@ const DressStyle = () => {
 };
 
 export default DressStyle;
-
 

@@ -1,22 +1,19 @@
-import Card from "../cartpage/cart";
+import Card from "../cardpage/card";
 import { GoDotFill } from "react-icons/go";
 
-
-
 export default function Customer() {
-  // Dummy data for cards
   const CustomerData = [
     {
       text: "Samanthaa D.",
       description:
         "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
-        date: "Posted on: August 14, 2023"
+      date: "Posted on: August 14, 2023",
     },
     {
       text: "Alex M.",
       description:
         "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
-      date: "Posted on: August 15, 2023"
+      date: "Posted on: August 15, 2023",
     },
     {
       text: "Ethan R.",
@@ -45,42 +42,37 @@ export default function Customer() {
   ];
 
   return (
-    <div className="flex font-Satoshi flex-col justify-between items-center m-auto gap-0">
+    <div className="flex flex-col items-center w-full px-4">
       {/* Header */}
-      <div className="w-[90%] h-[80px] flex justify-start   items-center m-auto">
-        <div className="flex w-2/3 h-[20px] justify-start gap-2 items-center mx-auto">
-        <h1 className="flex gap-4 sm:h-[58px] sm:w-[654px]  w-[286px] h-[20px] left-4 text-[#000000] lg:left-[100px] top-[150px] text-[20px] sm:text-[28px] sm:mt-[50px] leading-[57.px] font-semibold mb-2 mx-auto">
-          All Reviews </h1>
-                  
-        
-        </div>
-        <div className="flex w-1/3 justify-end items-center gap-2 my-auto">
-          <GoDotFill className="w-[24px] h-[24px] text-2xl text-gray-700" />
-          <GoDotFill className="w-[24px] h-[24px] text-2xl text-gray-400" />
-          <GoDotFill className="w-[24px] h-[24px] text-2xl text-gray-400" />
-
+      <div className="w-full flex flex-col sm:flex-row justify-between items-center mb-6">
+        <h1 className="text-lg sm:text-2xl lg:text-3xl font-semibold text-center sm:text-left">
+          All Reviews
+        </h1>
+        <div className="flex gap-2 mt-4 sm:mt-0">
+          <GoDotFill className="text-2xl text-gray-700" />
+          <GoDotFill className="text-2xl text-gray-400" />
+          <GoDotFill className="text-2xl text-gray-400" />
         </div>
       </div>
 
       {/* Dynamic Cards */}
-      <div className="lg:ml-[90px] mt-[50px] border-b-2  border-gray-200 flex flex-wrap gap-6 justify-center">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {CustomerData.map((customer, index) => (
           <Card
-            key={index} // Use index as key for now (prefer unique IDs in real apps)
+            key={index}
             text={customer.text}
             p={customer.description}
-            date={customer.date} // Pass date as a prop to the Card component
+            date={customer.date}
           />
         ))}
-        <div className="col-span-full flex justify-center mt-8 mb-12">
-          <button className="text-lg font-Satoshi font-medium text-black px-16 py-2 border-2 border-gray-200 rounded-full">
-            Load More Reviews
-          </button>
-        </div>
       </div>
-      
+
+      {/* Load More Button */}
+      <div className="w-full flex justify-center mt-8 mb-12">
+        <button className="text-sm sm:text-lg font-medium text-black px-6 sm:px-12 py-2 border border-gray-300 rounded-full hover:bg-gray-100">
+          Load More Reviews
+        </button>
+      </div>
     </div>
   );
 }
-
-

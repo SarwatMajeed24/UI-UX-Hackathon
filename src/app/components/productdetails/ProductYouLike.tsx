@@ -60,20 +60,20 @@ const YouMayLike = () => {
   };
 
   return (
-    <div className="py-10 px-4">
+    <div className="py-10 w-[90%] mx-auto">
       {/* Heading */}
       <div className="text-center mb-8">
-        <h1 className="font-IntegralCF text-4xl font-extrabold leading-tight underline underline-offset-4">
+        <h1 className="text-2xl lg:text-4xl font-extrabold underline underline-offset-4">
           YOU MIGHT ALSO LIKE
         </h1>
       </div>
 
       {/* Card Section */}
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {card.map((item) => (
           <div
             key={item.id}
-            className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow flex flex-col justify-between"
+            className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow"
           >
             {/* Image Section */}
             <div className="relative w-full h-[250px] rounded-md overflow-hidden">
@@ -126,5 +126,4 @@ const YouMayLike = () => {
     </div>
   );
 };
-
 export default YouMayLike;

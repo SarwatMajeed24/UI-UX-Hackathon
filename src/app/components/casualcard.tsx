@@ -1,21 +1,9 @@
-import React from "react";
 import Image from "next/image";
 import { IoMdStar } from "react-icons/io";
-import { FaArrowLeftLong } from "react-icons/fa6";
-import { FaArrowRightLong } from "react-icons/fa6";
-
-type CasualCardData = {
-  id: number;
-  image: string;
-  title: string;
-  price: string;
-  priceWas: string;
-  rating: number;
-};
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 const CasualCard = () => {
-  const card: CasualCardData[] = [
-    
+  const card = [
     {
       id: 1,
       image: "/images/product detail page/Cate1.png",
@@ -61,7 +49,7 @@ const CasualCard = () => {
       image: "/images/product detail page/cate6.png",
       title: "SLEEVE STRIPED T-SHIRT",
       price: "$130",
-      priceWas: "160",
+      priceWas: "$160",
       rating: 4.5,
     },
     {
@@ -90,7 +78,6 @@ const CasualCard = () => {
     },
   ];
 
-  // Function to calculate the discount percentage
   const calculateDiscount = (price: string, priceWas: string) => {
     if (priceWas) {
       const discount =
@@ -113,7 +100,7 @@ const CasualCard = () => {
       </div>
 
       {/* Card Section */}
-      <div className="w-[90%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 m-auto">
+      <div className="w-[90%] max-w-[1440px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto">
         {card.map((item) => (
           <div
             key={item.id}
@@ -130,7 +117,7 @@ const CasualCard = () => {
             </div>
             <h2 className="text-sm font-semibold mt-2">{item.title}</h2>
             <div className="flex items-center gap-2 mt-1">
-              <div className="flex text-yellow-500">
+              <div className="flex">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <IoMdStar
                     key={index}
@@ -161,7 +148,7 @@ const CasualCard = () => {
         ))}
       </div>
 
-      {/* View All Button */}
+      {/* Navigation Buttons */}
       <div className="flex justify-between items-center mt-8 mb-12 px-12">
         <button className="flex gap-4 justify-between items-center text-lg font-Satoshi font-medium text-black px-6 py-2 border-2 border-gray-200 rounded-xl">
           <FaArrowLeftLong /> Previous
